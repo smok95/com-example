@@ -1,0 +1,7 @@
+ipch/
+Obj/
+Bin/Debug
+*.sdf
+*.suo
+*.vcxproj.user
+*.pdb

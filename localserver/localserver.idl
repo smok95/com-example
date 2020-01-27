@@ -1,0 +1,36 @@
+// localserver.idl : localserver의 IDL 소스입니다.
+//
+
+// 이 파일은 MIDL 도구에 의해 처리되어
+// 형식 라이브러리(localserver.tlb) 및 마샬링 코드가 생성됩니다.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(B139C4E2-8A5A-42E4-BE15-19BD4AF82670),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICalc : IDispatch{
+	[id(1)] HRESULT Add([in] LONG a, [in] LONG b, [out,retval] LONG* ret);
+};
+[
+	uuid(47E5C489-9292-42C4-9E81-4540A443FCF1),
+	version(1.0),
+]
+library localserverLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(FAEEE2D8-D8E9-4133-A32A-C80A9155F338)		
+	]
+	coclass Calc
+	{
+		[default] interface ICalc;
+	};
+};
+
+import "shobjidl.idl";

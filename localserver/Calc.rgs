@@ -1,0 +1,26 @@
+HKCR
+{
+	LocalServer.Calc.1 = s 'Calc Class'
+	{
+		CLSID = s '{FAEEE2D8-D8E9-4133-A32A-C80A9155F338}'
+	}
+	LocalServer.Calc = s 'Calc Class'
+	{		
+		CurVer = s 'LocalServer.Calc.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {FAEEE2D8-D8E9-4133-A32A-C80A9155F338} = s 'Calc Class'
+		{
+			ProgID = s 'LocalServer.Calc.1'
+			VersionIndependentProgID = s 'LocalServer.Calc'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{47E5C489-9292-42C4-9E81-4540A443FCF1}'
+			Version = s '1.0'
+		}
+	}
+}
